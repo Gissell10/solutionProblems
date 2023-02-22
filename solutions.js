@@ -12,10 +12,25 @@
 // countPositivesSumNegatives([
 //   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15,
 // ]);
-function sumTwoSmallestNumbers(numbers) {
-  let organized = numbers.sort((a, b) => {
-    return a - b;
-  });
-  return organized;
+// function sumTwoSmallestNumbers(numbers) {
+//   let organized = numbers.sort((a, b) => {
+//     return a - b;
+//   });
+//   return organized;
+
+//console.log(sumTwoSmallestNumbers([15, 28, 4.67, 2, 43]));
+
+// *************** Algorithm *********** //
+
+function findElement(arr, func) {
+  let num = 0;
+  for (let i = 0; i <= arr.length; i++) {
+    num = arr[i];
+    if (func(num)) {
+      return num;
+    }
+  }
+  return undefined;
 }
-console.log(sumTwoSmallestNumbers([15, 28, 4.67, 2, 43]));
+
+console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0));
