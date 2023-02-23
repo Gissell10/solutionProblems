@@ -22,15 +22,38 @@
 
 // *************** Algorithm *********** //
 
-function findElement(arr, func) {
-  let num = 0;
-  for (let i = 0; i <= arr.length; i++) {
-    num = arr[i];
-    if (func(num)) {
-      return num;
-    }
-  }
-  return undefined;
+// function findElement(arr, func) {
+// let num = 0;
+// for (let i = 0; i <= arr.length; i++) {
+//   num = arr[i];
+//   if (func(num)) {
+//     return num;
+//   }
+// }
+// return undefined;
+// }
+
+// console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0));
+
+// *************** Linear Search *********** //
+
+/*([-5, 2, 10, 4 , 6], 10, =>'Shoul return 2' if is not found return -1)
+
+function linearSearch(arr, t) {
+  return arr.indexOf(t);
 }
 
-console.log(findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0));
+console.log(linearSearch([-5, 2, 10, 4, 6], 1));*/
+
+/*function sorted(numbers) {
+  numbers.sort((a, b) => a - b);
+  return numbers;
+}
+console.log(sorted([2, 9, 6, 0, 3, 1]));
+
+Note that the array is sorted in place, and no copy is made.*/
+
+// function sorted(numbers) {
+//   return [...numbers].sort((a, b) => a - b);
+// }
+// console.log(sorted([2, 9, 6, 0, 3, 1]));
