@@ -45,13 +45,14 @@ function linearSearch(arr, t) {
 
 console.log(linearSearch([-5, 2, 10, 4, 6], 1));*/
 
-/*function sorted(numbers) {
-  numbers.sort((a, b) => a - b);
-  return numbers;
+/* function sorted(numbers, t) {
+  return numbers.sort((a, b) => a - b).indexOf(t);
 }
-console.log(sorted([2, 9, 6, 0, 3, 1]));
+console.log(sorted([2, 9, 6, 0, 3, 1], 9));
+console.log(sorted([-5, 4, 6, 2, 10], 10));
+console.log(sorted([-5, 4, 6, 2, 10], 20));
 
-Note that the array is sorted in place, and no copy is made.*/
+//Note that the array is sorted in place, and no copy is made. */
 
 // function sorted(numbers) {
 //   return [...numbers].sort((a, b) => a - b);
