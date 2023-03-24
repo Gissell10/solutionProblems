@@ -72,17 +72,17 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 // //console.log(fibonacci(1));
 // console.log(fibonacci(0));
 
-function armstrong(n) {
-  let string = n.toString();
-  let pow = string.length;
-  let arr = [...string];
-  let arrNumber = arr.map((e) => parseInt(...e));
-  let potencia = arrNumber.map((e) => Math.pow(e, pow)).reduce((a, b) => a + b);
+// function armstrong(n) {
+//   let string = n.toString();
+//   let pow = string.length;
+//   let arr = [...string];
+//   let arrNumber = arr.map((e) => parseInt(...e));
+//   let potencia = arrNumber.map((e) => Math.pow(e, pow)).reduce((a, b) => a + b);
 
-  return n === potencia ? true : false;
-}
+//   return n === potencia ? true : false;
+// }
 
-console.log(armstrong(153));
+// console.log(armstrong(153));
 
 // armstrong([(21, 4), Programming challenge description:
 //   Alice has an even number of N beads, and each bead has a number from 1 to N painted on it. She would like to make a necklace out of all the beads, with a special requirement: any two beads next to each other on the necklace must sum to a prime number. Alice needs your help to calculate how many ways it is possible to do so.
@@ -106,3 +106,26 @@ console.log(armstrong(153));
 //   Expected Output
 //   Download Test 1 Output
 //   2(1, -6)]);
+
+// function FindIntersection(strArr) {
+//   let arrNumbers = strArr.map((e) => e.split(", "));
+//   let oneArr = arrNumbers.flat();
+//   let intersection = oneArr.filter(
+//     (item, index) => oneArr.indexOf(item) !== index
+//   );
+//   return intersection;
+// }
+// console.log(FindIntersection(["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]));
+
+// function FirstFactorial(num) {
+//   if (num === 0 || num === 1) {
+//     return 1;
+//   }
+//   for (let i = num - 1; i >= 1; i--) {
+//     num *= i;
+//   }
+//   return num;
+// }
+
+// // keep this function call here
+// console.log(FirstFactorial(4));
