@@ -59,19 +59,6 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 // }
 // console.log(sorted([2, 9, 6, 0, 3, 1]));
 
-// function fibonacci(n) {
-//   if (n <= 1) {
-//     return n;
-//   }
-//   let arr = [0, 1];
-
-//   for (let i = 2; i <= n; i++) {
-//     console.log();a
-//   }
-// }
-// //console.log(fibonacci(1));
-// console.log(fibonacci(0));
-
 // function armstrong(n) {
 //   let string = n.toString();
 //   let pow = string.length;
@@ -129,3 +116,79 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 
 // // keep this function call here
 // console.log(FirstFactorial(4));
+
+// function sortArray(arr) {
+//   // return arr.sort((a, b) => a - b);
+// let swapped
+// do{
+
+// }
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] > arr[i + 1]) {
+//       let temp = arr[i];
+//       arr[i] = arr[i + 1];
+//       arr[i + 1] = temp;
+//     }
+//   }
+// }
+
+// console.log(sortArray([1, 3, 5, 2, 4]));
+// console.log(sortArray([2, 9, 6, 0, 3, 1]));
+// console.log(sortArray([-6, 20, 8, -2, 4]));
+
+// function sym(...args) {
+//   let differElements = args.flat();
+//   let countElements = differElements.reduce((acomulator, currentElement) => {
+//     const current = acomulator[currentElement] ?? 0;
+//     return {
+//       ...acomulator,
+//       [currentElement]: current + 1,
+//     };
+//   }, {});
+//   let uniqueNumbers = Object.keys(countElements).find(
+//     (key) => uniqueNumbers[key] === 1
+//   );
+//   console.log(uniqueNumbers);
+// }
+// sym([1, 2, 3], [5, 2, 1, 4]);
+
+// function fiboEvenSum(n) {
+//   let n1 = 1,
+//     n2 = 2,
+//     nexterm;
+//   let fib = [];
+
+//   nexterm = n1 + n2;
+
+//   fib.push(n1);
+//   fib.push(n2);
+
+//   while (nexterm <= n) {
+//     fib.push(nexterm);
+
+//     n1 = n2;
+//     n2 = nexterm;
+//     nexterm = n1 + n2;
+//   }
+//   let even = fib.filter((e) => e % 2 == 0);
+//   return even.reduce((a, b) => a + b);
+// }
+// There are 100 doors in a row that are all initially closed. You make 100 passes by the doors.
+// The first time through, visit every door and 'toggle' the door
+//  (if the door is closed, open it; if it is open, close it).
+//  The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...)
+//  and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc.,
+//   until you only visit the 100th door.
+
+function getFinalOpenedDoors(numDoors) {
+  let open;
+  let finalDoorsOpened = [];
+  for (let i = 1; i <= numDoors; i++) {
+    if (i % 2 !== 0 && i % 3 !== 0) {
+      finalDoorsOpened.push(i);
+    }
+  }
+  return finalDoorsOpened;
+}
+
+console.log(getFinalOpenedDoors(100));
