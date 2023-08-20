@@ -192,18 +192,20 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 
 // console.log(getFinalOpenedDoors(100));
 function XO(str) {
-  let nostr = [...str];
-  let hmx = nostr.filter((e) => e === "x" || "X");
-  if (hmx.length === 0) {
+  let nostr = str.toLowerCase().match(/[xo]/gi);
+  if (nostr === null) {
     return true;
-  }
-  let media = nostr.length / 2;
+  } else {
+    let hmx = nostr.filter((e) => e === "x");
 
-  return media === hmx.length ? true : false;
+    let media = nostr.length / 2;
+
+    return media === hmx.length ? true : false;
+  }
 }
 
-// console.log(XO("ooxx"), true);
-// console.log(XO("xooxx"), false);
-// console.log(XO("ooxXm"), true);
-// console.log(XO("zpzpzpp"), true);
-// console.log(XO("zzoo"), false);
+console.log(XO("ooxx"), true);
+console.log(XO("xooxx"), false);
+console.log(XO("ooxXm"), true);
+console.log(XO("zpzpzpp"), true);
+console.log(XO("oo"), false);
