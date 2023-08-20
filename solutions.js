@@ -181,10 +181,9 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 //   until you only visit the 100th door.
 
 function getFinalOpenedDoors(numDoors) {
-  let open;
   let finalDoorsOpened = [];
   for (let i = 1; i <= numDoors; i++) {
-    if (i % 2 !== 0 && i % 3 !== 0) {
+    if (i % Math.sqrt(i) === 0) {
       finalDoorsOpened.push(i);
     }
   }
