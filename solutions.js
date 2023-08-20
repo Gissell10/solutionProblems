@@ -180,14 +180,30 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 //  and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc.,
 //   until you only visit the 100th door.
 
-function getFinalOpenedDoors(numDoors) {
-  let finalDoorsOpened = [];
-  for (let i = 1; i <= numDoors; i++) {
-    if (i % Math.sqrt(i) === 0) {
-      finalDoorsOpened.push(i);
-    }
+// function getFinalOpenedDoors(numDoors) {
+//   let finalDoorsOpened = [];
+//   for (let i = 1; i <= numDoors; i++) {
+//     if (i % Math.sqrt(i) === 0) {
+//       finalDoorsOpened.push(i);
+//     }
+//   }
+//   return finalDoorsOpened;
+// }
+
+// console.log(getFinalOpenedDoors(100));
+function XO(str) {
+  let nostr = [...str];
+  let hmx = nostr.filter((e) => e === "x" || "X");
+  if (hmx.length === 0) {
+    return true;
   }
-  return finalDoorsOpened;
+  let media = nostr.length / 2;
+
+  return media === hmx.length ? true : false;
 }
 
-console.log(getFinalOpenedDoors(100));
+// console.log(XO("ooxx"), true);
+// console.log(XO("xooxx"), false);
+// console.log(XO("ooxXm"), true);
+// console.log(XO("zpzpzpp"), true);
+// console.log(XO("zzoo"), false);
