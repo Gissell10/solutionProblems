@@ -191,21 +191,44 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 // }
 
 // console.log(getFinalOpenedDoors(100));
-function XO(str) {
-  let nostr = str.toLowerCase().match(/[xo]/gi);
-  if (nostr === null) {
-    return true;
-  } else {
-    let hmx = nostr.filter((e) => e === "x");
+// function XO(str) {
+//   let nostr = str.toLowerCase().match(/[xo]/gi);
+//   if (nostr === null) {
+//     return true;
+//   } else {
+//     let hmx = nostr.filter((e) => e === "x");
 
-    let media = nostr.length / 2;
+//     let media = nostr.length / 2;
 
-    return media === hmx.length ? true : false;
+//     return media === hmx.length ? true : false;
+//   }
+// }
+
+// console.log(XO("ooxx"), true);
+// console.log(XO("xooxx"), false);
+// console.log(XO("ooxXm"), true);
+// console.log(XO("zpzpzpp"), true);
+// console.log(XO("oo"), false);
+function sumArray(array) {
+  if (array === null || array.length === 0) {
+    return 0;
   }
+  let sorted = array.sort((a, b) => a - b);
+
+  let min = sorted.shift();
+
+  let max = sorted.pop();
+  // // return sorted.reduce((a, b) => a + b);
+
+  // let max = Math.max(...array);
+  // let min = Math.min(...array);
+  let sum = 0;
+  for (let i = 0; i < sorted.length; i++) {
+    sum += sorted[i];
+  }
+  return sum;
 }
 
-console.log(XO("ooxx"), true);
-console.log(XO("xooxx"), false);
-console.log(XO("ooxXm"), true);
-console.log(XO("zpzpzpp"), true);
-console.log(XO("oo"), false);
+console.log(sumArray([6, 2, 1, 8, 10]));
+// console.log(sumArray([]));
+// console.log(sumArray([3]));
