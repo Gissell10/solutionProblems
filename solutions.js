@@ -209,26 +209,86 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 // console.log(XO("ooxXm"), true);
 // console.log(XO("zpzpzpp"), true);
 // console.log(XO("oo"), false);
-function sumArray(array) {
-  if (array === null || array.length === 0) {
-    return 0;
-  }
-  let sorted = array.sort((a, b) => a - b);
+// function sumArray(array) {
+//   if (array === null || array.length === 0) {
+//     return 0;
+//   }
+//   let sorted = array.sort((a, b) => a - b);
 
-  let min = sorted.shift();
+//   let min = sorted.shift();
 
-  let max = sorted.pop();
-  // // return sorted.reduce((a, b) => a + b);
+//   let max = sorted.pop();
+//   // // return sorted.reduce((a, b) => a + b);
 
-  // let max = Math.max(...array);
-  // let min = Math.min(...array);
-  let sum = 0;
-  for (let i = 0; i < sorted.length; i++) {
-    sum += sorted[i];
-  }
-  return sum;
+//   // let max = Math.max(...array);
+//   // let min = Math.min(...array);
+//   let sum = 0;
+//   for (let i = 0; i < sorted.length; i++) {
+//     sum += sorted[i];
+//   }
+//   return sum;
+// }
+
+// console.log(sumArray([6, 2, 1, 8, 10]));
+// // console.log(sumArray([]));
+// // console.log(sumArray([3]));
+
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//   let fuelNeeded = distanceToPump / mpg;
+//   return fuelLeft === fuelNeeded ? true : false;
+// };
+// console.log(zeroFuel(50, 25, 2), "true");
+// console.log(zeroFuel(100, 50, 1), "false");
+
+// function highAndLow(numbers) {
+//   let array = numbers.split(" ").map((x) => parseInt(x));
+//   let max = Math.max(...array);
+//   let min = Math.min(...array);
+
+//   return `${max} ${min}`;
+// }
+// console.log(highAndLow("1 2 3 4 5")); // return "5 1"
+// console.log(highAndLow("1 2 -3 4 5")); // return "5 -3"
+// console.log(highAndLow("1 9 3 4 -5")); // return "9 -5"
+
+// function betterThanAverage(classPoints, yourPoints) {
+//   let pointsInClass = classPoints.length;
+//   let sumOfPoints = classPoints.reduce((a, b) => a + b);
+//   let average = sumOfPoints / pointsInClass;
+//   return yourPoints >= average ? true : false;
+// }
+// console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50));
+// console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
+
+// function lovefunc(flower1, flower2) {
+//   let isevenF1 = flower1 % 2 === 0;
+//   let isevenF2 = flower2 % 2 === 0;
+
+//   return isevenF1 != isevenF2 ? true : false;
+// }
+// console.log(lovefunc(864, 865), "true");
+// console.log(lovefunc(865, 864), "true");
+// console.log(lovefunc(2, 2), "false");
+// console.log(lovefunc(0, 1), "true");
+// console.log(lovefunc(0, 0), "false");
+// function past(h, m, s) {
+//   return h * 60 * 60 * 1000 + 60 * m * 1000 + s * 1000;
+// }
+// console.log(past(0, 1, 1), "61000");
+// console.log(past(1, 1, 1), "3661000");
+// console.log(past(0, 0, 0), 0);
+// console.log(past(1, 0, 1), "3601000");
+// console.log(past(1, 0, 0), "3600000");
+/*You are given an odd-length array of integers, in which all of them are the same, 
+except for one single number.
+Complete the method which accepts such an array, and returns that single different number.
+The input array will always be valid! (odd-length >= 3)*/
+function stray(numbers) {
+  let differElements = numbers.filter(
+    (e) => numbers.indexOf(e) === numbers.lastIndexOf(e)
+  );
+  return differElements[0];
 }
-
-console.log(sumArray([6, 2, 1, 8, 10]));
-// console.log(sumArray([]));
-// console.log(sumArray([3]));
+console.log(stray([1, 3, 1]), "3");
+console.log(stray([1, 2, 1]), "2");
+console.log(stray([2, 1, 1]), "2");
