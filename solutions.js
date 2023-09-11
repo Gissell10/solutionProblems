@@ -283,7 +283,7 @@ console.log(sorted([-5, 4, 6, 2, 10], 20));
 except for one single number.
 Complete the method which accepts such an array, and returns that single different number.
 The input array will always be valid! (odd-length >= 3)*/
-function stray(numbers) {
+/*function stray(numbers) {
   let differElements = numbers.filter(
     (e) => numbers.indexOf(e) === numbers.lastIndexOf(e)
   );
@@ -291,4 +291,27 @@ function stray(numbers) {
 }
 console.log(stray([1, 3, 1]), "3");
 console.log(stray([1, 2, 1]), "2");
-console.log(stray([2, 1, 1]), "2");
+console.log(stray([2, 1, 1]), "2");*/
+
+// function getDivisorsCnt(n) {
+//   let numbers = [];
+//   for (let i = 1; i <= n; i++) {
+//     if (n % i === 0) {
+//       numbers.push(i);
+//     }
+//   }
+//   return numbers.length;
+// }
+// console.log(getDivisorsCnt(7), "3");
+// console.log(getDivisorsCnt(49), "x");
+// console.log(getDivisorsCnt(11), 2);
+// console.log(getDivisorsCnt(54), 8);
+function solution(str) {
+  let newString = " ";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newString += str[i];
+  }
+  return newString;
+}
+console.log(solution("world"));
+console.log(solution("word"));
